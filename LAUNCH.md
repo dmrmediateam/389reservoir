@@ -13,9 +13,11 @@ Built from property template `343b154`.
 
 ## Confirm with Jeff before launch
 
-1. **Bathrooms.** The form says 4; Zillow's public record says 3 (2 full + 1 half). The page
-   shows **4**. Confirm the full/half split. If there are half baths, set `property.halfBaths`
-   and update the specs row.
+Rule: where sources disagree, the page follows Jeff's Typeform. Zillow only fills gaps the
+Typeform doesn't cover.
+
+1. **Bathrooms: settled at 4, per Jeff's Typeform.** (Zillow's older public record says 3; the
+   Typeform wins on any conflict.) Optionally ask for the full/half split to show in the specs.
 2. **Lot size of 15.75 acres** (public record) is used in the hero, the overview and the SEO description.
 3. **Utilities** (well and septic) and **zoning 36RA** come from public record. Zillow also lists
    oil/hot-water heat and window-unit A/C, which I left off because the renovation may have changed them.
