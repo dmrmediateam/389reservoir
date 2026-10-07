@@ -110,7 +110,6 @@ export const site: SiteConfig = {
     highlights: [
       "Private previews by appointment before the home reaches the open market.",
       "Full feature list, renovation details and disclosures on request.",
-      "Direct line to the listing agent, not a call center.",
     ],
   },
   nav: [

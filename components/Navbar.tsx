@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { site } from "@/site.config";
 import { CtaLink } from "@/components/ui";
@@ -28,14 +27,6 @@ export default function Navbar() {
   return (
     <header className={`nav${solid ? " is-solid" : ""}${menuOpen ? " is-open" : ""}`}>
       <div className="nav__inner">
-        <a href="#top" className="nav__brand" aria-label={`${site.property.name}, back to top`}>
-          {site.brand.logoSrc ? (
-            <Image src={site.brand.logoSrc} alt={site.brand.wordmark} width={180} height={40} priority className="nav__logo" />
-          ) : (
-            <span className="nav__wordmark">{site.brand.wordmark}</span>
-          )}
-        </a>
-
         <nav className="nav__links" aria-label="Sections">
           {site.nav.map((link) => (
             <a key={link.href} href={link.href}>

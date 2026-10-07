@@ -447,6 +447,7 @@ button {
 
 .nav__actions {
   display: flex;
+  margin-left: auto;
   align-items: center;
   gap: 18px;
 }
