@@ -1,0 +1,26 @@
+{
+  "name": "389-reservoir-rd",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "images": "node scripts/optimize-images.mjs",
+    "contact-sheet": "node scripts/contact-sheet.mjs"
+  },
+  "dependencies": {
+    "next": "^15.4.6",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "sharp": "^0.34.2",
+    "typescript": "^5.8.0"
+  }
+}

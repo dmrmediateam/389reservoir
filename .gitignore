@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+.env*.local
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+
+# Client intake (photographer originals, briefs) and photo review sheets
+_intake/
+.contact-sheet/
+
+# Playwright session files
+.playwright-mcp/
