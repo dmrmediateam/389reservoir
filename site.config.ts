@@ -67,9 +67,9 @@ export const site: SiteConfig = {
     creamAlt: "#efebe2",
   },
   seo: {
-    title: "389 Reservoir Rd · Circa 1860 Stone Estate · Quakertown, PA",
+    title: "389 Reservoir Rd · Luxury Farmhouse · Bucks County Estate · Quakertown, PA",
     description:
-      "A renovated 1860 fieldstone estate in Bucks County with a private pond, in-ground pool and 15.75 acres: 3 bedrooms, 4 baths, 2,592 sq ft. Offered at $1,599,000.",
+      "A renovated 1860 luxury farmhouse on a Bucks County estate with a private pond, in-ground pool and 15.75 acres: 3 bedrooms, 4 baths, 2,592 sq ft. Offered at $1,599,000.",
     ogImage: img("01-z01"),
     index: true,
   },
@@ -122,7 +122,7 @@ export const site: SiteConfig = {
   hero: {
     eyebrow: "Quakertown, Pennsylvania",
     titleLines: [{ text: "389 Reservoir" }, { text: "Road", italic: true }],
-    subline: "Circa 1860 Stone Estate · Bucks County · Private Pond & Pool",
+    subline: "Circa 1860 Luxury Farmhouse · Bucks County Estate · Pond & Pool",
     lead:
       "An 1860 fieldstone farmhouse, renovated with custom finishes, on 15.75 acres with its own pond, pool and gardens.",
     imageSrc: img("01-z01"),
@@ -134,7 +134,7 @@ export const site: SiteConfig = {
   },
   marquee: [7, 13, 19, 26, 14, 23, 27, 10],
   overview: {
-    eyebrow: "The Estate",
+    eyebrow: "Bucks County Estate",
     titleLines: [{ text: "Historic stone," }, { text: "thoroughly renewed", italic: true }],
     lede:
       "389 Reservoir Road pairs the fieldstone walls of an 1860 Bucks County farmhouse with a renovation carried out to a custom-home standard.",
