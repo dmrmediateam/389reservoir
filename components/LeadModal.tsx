@@ -97,7 +97,7 @@ export default function LeadModal() {
   return (
     <div className={`modal${closing ? " is-closing" : ""}`}>
       <button type="button" className="modal__backdrop" aria-label="Close" onClick={close} />
-      <div className="modal__dialog" role="dialog" aria-modal="true" aria-label="Enquiry form" ref={dialogRef}>
+      <div className="modal__dialog light" role="dialog" aria-modal="true" aria-label="Enquiry form" ref={dialogRef}>
         <button type="button" className="modal__close" aria-label="Close" onClick={close}>
           <span />
           <span />

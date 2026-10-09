@@ -102,7 +102,7 @@ export default function Gallery() {
   const position = visible.findIndex((v) => v.i === index) + 1;
 
   return (
-    <section className="gallery" id="gallery">
+    <section className="gallery light" id="gallery">
       <div className="container gallery__head" data-reveal="up">
         <div>
           <p className="eyebrow">{site.gallery.eyebrow}</p>

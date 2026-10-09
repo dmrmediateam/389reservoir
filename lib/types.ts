@@ -252,7 +252,8 @@ export type SiteConfig = {
     titleLines: TitleLine[];
     body: string;
   };
-  finalCta: {
+  /** Closing band with two form cards. Leave out for a page that ends on the enquiry section. */
+  finalCta?: {
     titleLines: TitleLine[];
     body: string;
   };

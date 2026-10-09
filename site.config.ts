@@ -5,29 +5,49 @@ import type { GalleryImage, SiteConfig } from "@/lib/types";
 
    Facts come from the agent's intake form (price, beds, baths, sq ft, year,
    description) and the Zillow public record (lot, pond, pool, garage, well,
-   septic, heating, zoning). Photos are from Zillow; the interior shots there
-   predate the renovation, so the gallery is exterior-only until new interior
-   photography arrives. See LAUNCH.md.
+   septic, heating, zoning). The lead photos are Jeff's renovation shoot
+   (public/images/jeff); the older Zillow set (exteriors, pond, wildlife)
+   follows them. See LAUNCH.md.
    ========================================================================== */
 
 const img = (file: string) => `/images/property/${file}.jpg`;
+const shoot = (file: string) => `/images/jeff/${file}.jpg`;
 
-// Order is the order the lightbox walks through: the hero shots first, then the
-// house, the grounds and pool, the pond through the seasons, then its wildlife.
+// Order is the order the lightbox walks through: Jeff's shoot first (front,
+// the main living spaces, upstairs, the suites), then the older Zillow set:
+// the grounds and pool, the pond through the seasons, then its wildlife.
 const images: GalleryImage[] = [
-  { src: img("01-z01"), label: "Fieldstone Farmhouse, Circa 1860", category: "The Home" },
+  { src: shoot("house-front"), label: "Fieldstone Farmhouse, Circa 1860", category: "The Home" },
+  { src: shoot("great-room"), label: "Great Room Under Exposed Beams", category: "Interior" },
+  { src: shoot("kitchen"), label: "The Kitchen", category: "Interior" },
+  { src: shoot("kitchen-hearth"), label: "Kitchen Island And Stone Hearth", category: "Interior" },
+  { src: shoot("wood-stove"), label: "Wood Stove In The Stone Hearth", category: "Interior" },
+  { src: shoot("pantry"), label: "Pantry Kitchen", category: "Interior" },
+  { src: shoot("soapstone-sink"), label: "Carved Soapstone Sink", category: "Interior" },
+  { src: shoot("stairwell"), label: "Two-Story Stone Stairwell", category: "Interior" },
+  { src: shoot("loft"), label: "Loft Under Original Beams", category: "Interior" },
+  { src: shoot("loft-overlook"), label: "Loft Overlook", category: "Interior" },
+  { src: shoot("loft-lounge"), label: "Loft Lounge", category: "Interior" },
+  { src: shoot("primary-bedroom"), label: "Primary Bedroom", category: "Interior" },
+  { src: shoot("primary-bath"), label: "Primary Bath", category: "Interior" },
+  { src: shoot("primary-vanity"), label: "Primary Double Vanity", category: "Interior" },
+  { src: shoot("bedroom"), label: "Guest Bedroom", category: "Interior" },
+  { src: shoot("bedroom-windows"), label: "Corner Windows Over The Grounds", category: "Interior" },
+  { src: shoot("hall-bath"), label: "Hall Bath", category: "Interior" },
+  { src: shoot("guest-bath"), label: "Guest Bath", category: "Interior" },
+  { src: shoot("driveway"), label: "The Drive Up To The House", category: "The Home" },
+  { src: shoot("garage"), label: "Detached Four-Bay Garage", category: "The Home" },
+  { src: img("01-z01"), label: "Porch And Gardens", category: "The Home" },
   { src: img("52-z52"), label: "Across The Pond To The House", category: "The Pond" },
   { src: img("35-z35"), label: "In-Ground Pool", category: "Grounds" },
   { src: img("05-z05"), label: "Pond And Open Lawn", category: "The Pond" },
   { src: img("32-z32"), label: "Stone Outdoor Fireplace", category: "Grounds" },
-  { src: img("41-z41"), label: "Front Elevation", category: "The Home" },
   { src: img("06-z06"), label: "Sunroom And Garden Side", category: "The Home" },
   { src: img("28-z28"), label: "Covered Front Porch", category: "The Home" },
   { src: img("02-z02"), label: "Porch View Over The Grounds", category: "The Home" },
   { src: img("07-z07"), label: "Garden Entry", category: "The Home" },
   { src: img("29-z29"), label: "Wing With Upper Balcony", category: "The Home" },
   { src: img("21-z21"), label: "Balcony Deck Along The Stone", category: "The Home" },
-  { src: img("25-z25"), label: "Detached Garage", category: "The Home" },
   { src: img("31-z31"), label: "Screened Porch Over The Pool", category: "Grounds" },
   { src: img("34-z34"), label: "Pool And Diving Board", category: "Grounds" },
   { src: img("33-z33"), label: "Pool Through The Garden", category: "Grounds" },
@@ -58,19 +78,21 @@ export const site: SiteConfig = {
     credit: { label: "A DMR Media Production", href: "https://dmrmedia.org" },
   },
   theme: {
-    accent: "#c8a96e",
-    accentInk: "#8f6b35",
-    onAccent: "#17130b",
-    ink: "#141412",
-    canvas: "#0e0e0d",
-    cream: "#f7f4ee",
-    creamAlt: "#efebe2",
+    // Light editorial palette after 20 Tuscarora, with a deep field green in
+    // place of its river teal.
+    accent: "#2f5d4c",
+    accentInk: "#24493b",
+    onAccent: "#ffffff",
+    ink: "#1a1a1a",
+    canvas: "#0f1d18",
+    cream: "#f8f7f4",
+    creamAlt: "#edeae4",
   },
   seo: {
     title: "389 Reservoir Rd · Luxury Farmhouse · Bucks County Estate · Quakertown, PA",
     description:
       "A renovated 1860 luxury farmhouse on a Bucks County estate with a private pond, in-ground pool and 15.75 acres: 3 bedrooms, 4 baths, 2,592 sq ft. Offered at $1,599,000.",
-    ogImage: img("01-z01"),
+    ogImage: shoot("house-front"),
     index: true,
   },
   tracking: {
@@ -125,14 +147,14 @@ export const site: SiteConfig = {
     subline: "Circa 1860 Luxury Farmhouse · Bucks County Estate · Pond & Pool",
     lead:
       "An 1860 fieldstone farmhouse, renovated with custom finishes, on 15.75 acres with its own pond, pool and gardens.",
-    imageSrc: img("01-z01"),
+    imageSrc: shoot("house-front"),
     // videoSrc: "/videos/hero.mp4",
     ctas: [
       { label: "Book a Private Preview", form: "showing", location: "hero" },
       { label: "Get Early Access", form: "request", location: "hero" },
     ],
   },
-  marquee: [7, 13, 19, 26, 14, 23, 27, 10],
+  marquee: [],
   overview: {
     eyebrow: "Bucks County Estate",
     titleLines: [{ text: "Historic stone," }, { text: "thoroughly renewed", italic: true }],
@@ -140,8 +162,8 @@ export const site: SiteConfig = {
       "389 Reservoir Road pairs the fieldstone walls of an 1860 Bucks County farmhouse with a renovation carried out to a custom-home standard.",
     body:
       "Dramatic exposed beams run through the house. The showpiece kitchen and great room anchor the main level, and the primary suite is finished to a luxury standard. Outside, the setting does the rest: a private pond, an in-ground pool beside a stone outdoor fireplace, a screened porch, a covered front porch, mature landscaping, sweeping lawns and a detached garage, all on 15.75 acres.",
-    imageSrc: img("41-z41"),
-    imageAlt: "Fieldstone front elevation with covered porch",
+    imageSrc: shoot("great-room"),
+    imageAlt: "Great room with fieldstone walls and exposed beams",
     stats: [
       { value: "2,592", label: "Interior Sq Ft", count: true },
       { value: "3", label: "Bedrooms", count: true },
@@ -171,7 +193,7 @@ export const site: SiteConfig = {
     eyebrow: "The Gallery",
     titleLines: [{ text: "Four seasons" }, { text: "on fifteen acres", italic: true }],
     images,
-    featured: [1, 5, 2, 4, 3],
+    featured: [0, 1, 2, 11, 21],
   },
   amenities: {
     eyebrow: "Features",
@@ -209,15 +231,10 @@ export const site: SiteConfig = {
       imageSrc: img("52-z52"),
       imageAlt: "The pond in autumn with the house beyond",
       cta: { label: "Book a private preview", form: "showing", location: "pond" },
-      tone: "dark",
+      tone: "light",
       reverse: true,
     },
   ],
-  quote: {
-    text: "A heron at dawn, a swim at noon, the fire lit by evening.",
-    imageSrc: img("04-z04"),
-    imageAlt: "Autumn trees reflected in the pond",
-  },
   specs: {
     eyebrow: "At A Glance",
     titleLines: [{ text: "The details," }, { text: "all in one place", italic: true }],
@@ -282,10 +299,6 @@ export const site: SiteConfig = {
     titleLines: [{ text: "See it before" }, { text: "it goes public", italic: true }],
     body:
       "389 Reservoir Road is coming soon. Book a private preview, or request the full details and be among the first to know when it is officially listed.",
-  },
-  finalCta: {
-    titleLines: [{ text: "Take the" }, { text: "next step", italic: true }],
-    body: "Private previews are booking now. Jeff confirms most requests the same day.",
   },
   forms: {
     request: {

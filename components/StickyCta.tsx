@@ -34,7 +34,7 @@ export default function StickyCta() {
 
   const { property } = site;
   return (
-    <div className={`sticky-cta${pastHero && !formVisible ? " is-visible" : ""}`}>
+    <div className={`sticky-cta light${pastHero && !formVisible ? " is-visible" : ""}`}>
       <div className="sticky-cta__price">
         <strong>{property.price}</strong>
         <span>

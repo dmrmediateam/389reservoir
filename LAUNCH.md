@@ -28,19 +28,18 @@ Typeform doesn't cover.
    Adjust if Jeff prefers different ones.
 7. **Agent license line** is not shown. Add `agent.license` if RE/MAX requires it.
 
-## Photos: the main gap
+## Photos
 
-- Zillow's photos are from an **older listing** and max out at **1024px** wide, so they look soft
-  on large screens. Several carry a small **Bright MLS** watermark in the corner.
-- Zillow's **interior photos predate the renovation** (wood paneling, a dated kitchen with white
-  appliances, carpet). They contradict the "showpiece kitchen / luxury primary suite" copy, so
-  they are **not on the page**. The gallery is 33 exterior, pond, grounds and wildlife shots.
-  The excluded files are in `_intake/unused-property-images/`.
-- **Needed from Jeff:** the current professional shoot, full resolution, especially the kitchen,
-  great room, primary suite and baths. Then run `npm run images -- "<folder>"`, add Interior
-  photos to the gallery, and repoint `overview.imageSrc` (best living space) and `splits[1]`
-  (kitchen) to interiors.
-- A drone or twilight hero shot and a short hero video (`hero.videoSrc`) would also help.
+- **Jeff's renovation shoot** (`Jeff Creatives/`, 20 photos) leads the page: hero, overview, the gallery
+  mosaic and the first 20 gallery slots. Optimized copies with descriptive names are in
+  `public/images/jeff/`.
+- Three of the shots are named "GPT" in Jeff's folder (house front, driveway, garage). Cleared for
+  use (Oct 9 2026). The house front is the hero and OG image.
+- The older **Zillow set** (exteriors, pool, pond through the seasons, wildlife) follows Jeff's
+  shoot in the gallery. Those photos max out at 1024px and some carry a small Bright MLS watermark.
+  Zillow's pre-renovation interiors stay off the page (`_intake/unused-property-images/`).
+- The pool (Outdoor Living split) and pond splits still use Zillow photos. Swap them if Jeff has
+  newer pool or pond shots. A drone shot and a short hero video (`hero.videoSrc`) would also help.
 
 ## Vercel environment variables
 

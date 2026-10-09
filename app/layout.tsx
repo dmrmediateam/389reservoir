@@ -1,33 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Jost } from "next/font/google";
-import localFont from "next/font/local";
+import { Fraunces, Outfit } from "next/font/google";
 import type { CSSProperties } from "react";
 import { site } from "@/site.config";
 import TrackingScripts from "@/components/TrackingScripts";
 import "./globals.css";
 
-const display = Cormorant_Garamond({
+// Fraunces and Outfit, the same pairing as 20 Tuscarora.
+const display = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
   display: "swap",
 });
 
-// Fraunces numerals (as on 20 Tuscarora) in place of Cormorant's old-style
-// figures. The files hold only 0-9 and $, so every other glyph falls through to
-// Cormorant; no generated fallback, or it would catch the letters first.
-const digits = localFont({
-  src: [
-    { path: "./fonts/fraunces-digits.woff2", weight: "300 600", style: "normal" },
-    { path: "./fonts/fraunces-digits-italic.woff2", weight: "300 600", style: "italic" },
-  ],
-  display: "swap",
-  adjustFontFallback: false,
-  fallback: [],
-});
-
-const sans = Jost({
+const sans = Outfit({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500"],
@@ -65,7 +52,6 @@ const themeVars = {
   "--canvas": site.theme.canvas,
   "--cream": site.theme.cream,
   "--cream-alt": site.theme.creamAlt,
-  "--font-display": `${digits.style.fontFamily}, ${display.style.fontFamily}`,
 } as CSSProperties;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

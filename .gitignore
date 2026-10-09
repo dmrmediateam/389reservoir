@@ -12,3 +12,4 @@ _intake/
 
 # Playwright session files
 .playwright-mcp/
+.vercel

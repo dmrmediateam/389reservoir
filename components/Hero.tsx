@@ -4,10 +4,13 @@ import { keyFacts, priceReduction } from "@/lib/format";
 import { CtaLink } from "@/components/ui";
 import HeroVideo from "@/components/HeroVideo";
 
+/* Full-bleed photo with the copy set low on the left, the same layout as the
+   20 Tuscarora page: address, subline, price, key facts, lead, then the CTAs. */
 export default function Hero() {
   const { hero, property } = site;
   const reduction = priceReduction(property.previousPrice, property.price);
   const [primary, secondary] = hero.ctas;
+  const facts = keyFacts(property).map((f) => (f.label === "Built" ? `Built ${f.value}` : `${f.value} ${f.label}`));
 
   return (
     <section className="hero" id="top">
@@ -27,55 +30,41 @@ export default function Hero() {
       <div className="hero__content">
         <div className="hero__copy">
           <p className="hero__eyebrow hero-in" style={{ ["--i" as string]: 0 }}>
-            <span className="hero__eyebrow-line" />
             {hero.eyebrow}
-            {property.status ? <span className="hero__status">{property.status}</span> : null}
           </p>
-          <h1 className="hero__title">
+          <h1 className="hero__title hero-in" style={{ ["--i" as string]: 1 }}>
             {hero.titleLines.map((line, i) => (
-              <span key={i} className="hero__title-mask">
-                <span
-                  className={`hero__title-line hero-rise${line.italic ? " title-line--italic" : ""}`}
-                  style={{ ["--i" as string]: i + 1 }}
-                >
-                  {line.text}
-                </span>
+              <span key={i} className={`hero__title-line${line.italic ? " hero__title-line--italic" : ""}`}>
+                {line.text}
               </span>
             ))}
           </h1>
-          <p className="hero__subline hero-in" style={{ ["--i" as string]: 3 }}>
+          <p className="hero__subline hero-in" style={{ ["--i" as string]: 2 }}>
             {hero.subline}
           </p>
+          <div className="hero__price hero-in" style={{ ["--i" as string]: 3 }}>
+            <p className="hero__price-label">Offered at</p>
+            <p className="hero__price-value">{property.price}</p>
+            {reduction || property.status ? (
+              <p className="hero__price-tags">
+                {reduction ? <s>{property.previousPrice}</s> : null}
+                <span className="hero__badge">{reduction ? `Reduced ${reduction}` : property.status}</span>
+              </p>
+            ) : null}
+            <p className="hero__price-meta">{facts.join(" · ")}</p>
+          </div>
           <p className="hero__lead hero-in" style={{ ["--i" as string]: 4 }}>
             {hero.lead}
           </p>
           <div className="hero__ctas hero-in" style={{ ["--i" as string]: 5 }}>
-            <CtaLink cta={primary} className="btn btn--accent btn--large" arrow />
-            {secondary ? <CtaLink cta={secondary} className="btn btn--glass btn--large" /> : null}
+            <CtaLink cta={primary} className="btn btn--white" />
+            {secondary ? <CtaLink cta={secondary} className="btn btn--ghost" /> : null}
           </div>
         </div>
-      </div>
 
-      <div className="hero__facts hero-in" style={{ ["--i" as string]: 6 }}>
-        <div className="hero__price">
-          <span className="hero__price-label">Offered at</span>
-          <span className="hero__price-value">{property.price}</span>
-          {reduction ? (
-            <span className="hero__price-was">
-              <s>{property.previousPrice}</s> <em>Reduced {reduction}</em>
-            </span>
-          ) : null}
-        </div>
-        <ul className="hero__fact-list">
-          {keyFacts(property).map((fact) => (
-            <li key={fact.label}>
-              <strong>{fact.value}</strong>
-              <span>{fact.label}</span>
-            </li>
-          ))}
-        </ul>
         <a className="hero__scroll" href="#overview" aria-label="Scroll to the residence">
-          <span />
+          <span className="hero__scroll-line" />
+          <span className="hero__scroll-text">Scroll</span>
         </a>
       </div>
     </section>

@@ -291,7 +291,7 @@ export function Enquire() {
     .join("")
     .slice(0, 2);
   return (
-    <section className="enquire" id="enquire">
+    <section className="enquire light" id="enquire">
       <div className="container enquire__inner">
         <div className="enquire__side" data-reveal="up">
           <p className="eyebrow">{enquire.eyebrow}</p>
@@ -323,11 +323,11 @@ export function Enquire() {
               ))}
             </ul>
             <div className="agent__contact">
-              <a className="btn btn--glass" href={telHref(agent.phone)} data-location="agent-card">
+              <a className="btn btn--outline" href={telHref(agent.phone)} data-location="agent-card">
                 <PhoneIcon />
                 <span>{agent.phoneDisplay}</span>
               </a>
-              <a className="btn btn--glass" href={`mailto:${agent.email}`} data-location="agent-card">
+              <a className="btn btn--outline" href={`mailto:${agent.email}`} data-location="agent-card">
                 <MailIcon />
                 <span>Email</span>
               </a>
@@ -344,6 +344,7 @@ export function Enquire() {
 }
 
 export function FinalCta() {
+  if (!site.finalCta) return null;
   const { finalCta, forms } = site;
   return (
     <section className="final-cta">
