@@ -154,7 +154,18 @@ export const site: SiteConfig = {
       { label: "Get Early Access", form: "request", location: "hero" },
     ],
   },
-  marquee: [],
+  // Slideshow under the hero, in Jeff's order (his MLS photo numbers). Only the
+  // shots we have so far; 73, 63, 45, 49, 52, 59, 71, 69, 105, 103, "New Batch #5",
+  // "Pool GPT" and "Pond View from house" slot in once they arrive (see LAUNCH.md).
+  marquee: [
+    0, // Main GPT house front
+    1, // 41 great room
+    5, // 30 pantry kitchen
+    17, // 37 guest bath
+    9, // 11 loft overlook
+    7, // 17 stairwell
+    14, // 20 guest bedroom
+  ],
   overview: {
     eyebrow: "Bucks County Estate",
     titleLines: [{ text: "Historic stone," }, { text: "thoroughly renewed", italic: true }],

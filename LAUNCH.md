@@ -35,6 +35,12 @@ Typeform doesn't cover.
   `public/images/jeff/`.
 - Three of the shots are named "GPT" in Jeff's folder (house front, driveway, garage). Cleared for
   use (Oct 9 2026). The house front is the hero and OG image.
+- **Slideshow under the hero** (`marquee` in `site.config.ts`) follows Jeff's order, by his MLS photo
+  numbers: House Front, 73, 63, 41, 45, 49, 52, 59, 30, 37, New Batch #5, 71, 2, 69, 11, 17, 20, 4,
+  Pool GPT, Pond View from house, 105, 103. **Still needed from Jeff:** 73, 63, 45, 49, 52, 59, 71, 69,
+  105, 103, "New Batch #5", "Pool GPT", "Pond View from house", plus the attached "2" and "4" (confirm
+  whether those are MLS-2 and MLS-4). Optimize them with `npm run images`, add them to the gallery,
+  then slot their gallery indexes into `marquee` in that order.
 - The older **Zillow set** (exteriors, pool, pond through the seasons, wildlife) follows Jeff's
   shoot in the gallery. Those photos max out at 1024px and some carry a small Bright MLS watermark.
   Zillow's pre-renovation interiors stay off the page (`_intake/unused-property-images/`).
