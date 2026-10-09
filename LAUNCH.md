@@ -44,8 +44,10 @@ Typeform doesn't cover.
 - The older **Zillow set** (exteriors, pool, pond through the seasons, wildlife) follows Jeff's
   shoot in the gallery. Those photos max out at 1024px and some carry a small Bright MLS watermark.
   Zillow's pre-renovation interiors stay off the page (`_intake/unused-property-images/`).
-- The pool (Outdoor Living split) and pond splits still use Zillow photos. Swap them if Jeff has
-  newer pool or pond shots. A drone shot and a short hero video (`hero.videoSrc`) would also help.
+- Extra shots MLS-90 (workshop), 110 (pond from above) and 111 (boat at the pond) were added Oct 9.
+  110 is now the pond split photo and the last mosaic tile; 110 and 111 close the slideshow (they
+  aren't on Jeff's list, so move them if his order should be exact). The pool split still uses a
+  Zillow photo until "Pool GPT" arrives. A drone shot and a short hero video (`hero.videoSrc`) would also help.
 
 ## Vercel environment variables
 

@@ -37,6 +37,8 @@ const images: GalleryImage[] = [
   { src: shoot("guest-bath"), label: "Guest Bath", category: "Interior" },
   { src: shoot("driveway"), label: "The Drive Up To The House", category: "The Home" },
   { src: shoot("garage"), label: "Detached Four-Bay Garage", category: "The Home" },
+  { src: shoot("pond-above"), label: "The Pond From Above", category: "The Pond" },
+  { src: shoot("pond-boat"), label: "A Boat At The Water's Edge", category: "The Pond" },
   { src: img("01-z01"), label: "Porch And Gardens", category: "The Home" },
   { src: img("52-z52"), label: "Across The Pond To The House", category: "The Pond" },
   { src: img("35-z35"), label: "In-Ground Pool", category: "Grounds" },
@@ -68,6 +70,7 @@ const images: GalleryImage[] = [
   { src: img("47-z47"), label: "Deer In Winter", category: "Wildlife" },
   { src: img("51-z51"), label: "Cardinals In Winter", category: "Wildlife" },
   { src: img("48-z48"), label: "Wild Turkeys Under The Magnolia", category: "Wildlife" },
+  { src: shoot("workshop"), label: "Workshop And Storage", category: "The Home" },
 ];
 
 export const site: SiteConfig = {
@@ -165,6 +168,8 @@ export const site: SiteConfig = {
     9, // 11 loft overlook
     7, // 17 stairwell
     14, // 20 guest bedroom
+    20, // 110 pond from above (not on Jeff's list; added Oct 9)
+    21, // 111 boat at the water's edge (not on Jeff's list; added Oct 9)
   ],
   overview: {
     eyebrow: "Bucks County Estate",
@@ -204,7 +209,7 @@ export const site: SiteConfig = {
     eyebrow: "The Gallery",
     titleLines: [{ text: "Four seasons" }, { text: "on fifteen acres", italic: true }],
     images,
-    featured: [0, 1, 2, 11, 21],
+    featured: [0, 1, 2, 11, 20],
   },
   amenities: {
     eyebrow: "Features",
@@ -239,8 +244,8 @@ export const site: SiteConfig = {
       titleLines: [{ text: "Water at the" }, { text: "heart of the land", italic: true }],
       body:
         "A private pond with its own island, ringed by maples that turn red and gold each fall. It draws herons, geese and deer year-round, and the house looks out across it.",
-      imageSrc: img("52-z52"),
-      imageAlt: "The pond in autumn with the house beyond",
+      imageSrc: shoot("pond-above"),
+      imageAlt: "The private pond from above, ringed by trees",
       cta: { label: "Book a private preview", form: "showing", location: "pond" },
       tone: "light",
       reverse: true,
