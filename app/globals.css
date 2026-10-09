@@ -2839,6 +2839,142 @@ button {
   .hero__shade {
     background:
       linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 18%),
-      linear-gradient(0deg, rgba(5, 5, 5, 0.86) 0%, rgba(5, 5, 5, 0.6) 45%, rgba(5, 5, 5, 0.3) 72%, rgba(5, 5, 5, 0.15) 100%);
+      linear-gradient(0deg, rgba(5, 5, 5, 0.88) 0%, rgba(5, 5, 5, 0.66) 40%, rgba(5, 5, 5, 0.18) 62%, rgba(5, 5, 5, 0) 78%);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Phones: shorter page, the house visible above the hero copy, 44px tap
+   targets and nothing under 11px.
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 560px) {
+  html {
+    --section: 64px;
+    --gutter: 20px;
+  }
+
+  /* Hero: the lead repeats the subline and facts, so it drops out here and
+     the top of the frame stays clear for the house. */
+  .hero__lead {
+    display: none;
+  }
+
+  .hero__price {
+    margin-top: 16px;
+  }
+
+  .hero__price-label {
+    font-size: 11px;
+  }
+
+  .hero__badge {
+    font-size: 11px;
+  }
+
+  .hero__ctas .btn {
+    height: 50px;
+  }
+
+  .overview__intro {
+    margin-bottom: 36px;
+  }
+
+  .overview__lede {
+    font-size: 1.15rem;
+  }
+
+  .overview__stats dt,
+  .agent__role,
+  .lead-form__step-count,
+  .location__chips span {
+    font-size: 11px;
+  }
+
+  /* Features: two compact columns instead of nine full-width rows */
+  .amenities__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .amenity {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 18px 12px 18px 0;
+  }
+
+  .amenity:nth-child(odd) {
+    border-right: 1px solid var(--line);
+  }
+
+  .amenity:nth-child(even) {
+    padding-left: 14px;
+  }
+
+  .amenity__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .amenity__label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+  }
+
+  .split__content {
+    padding: 44px var(--gutter) 56px;
+  }
+
+  .location__map {
+    aspect-ratio: 1;
+  }
+
+  /* Tap targets: grow the hit area without moving the text */
+  .link-arrow {
+    padding-block: 14px 8px;
+    margin-block: -14px -8px;
+  }
+
+  .footer__nav,
+  .footer__contact {
+    gap: 0;
+  }
+
+  .footer__nav a,
+  .footer__contact a,
+  .footer__bottom a {
+    display: inline-block;
+    padding: 12px 0;
+  }
+
+  .specs__price span {
+    font-size: 11px;
+  }
+
+  .agent,
+  .lead-form--inline {
+    padding: 24px 20px;
+  }
+
+  .agent__contact .btn {
+    flex: 1;
+    padding: 0 14px;
+  }
+
+  /* Drive-time chips span the map instead of overflowing it at 360px */
+  .location__chips {
+    left: 12px;
+    right: 12px;
+    transform: none;
+  }
+
+  .location__chips li {
+    flex: 1;
+    padding: 10px 6px;
+  }
+
+  .location__chips strong {
+    font-size: 1.15rem;
   }
 }
