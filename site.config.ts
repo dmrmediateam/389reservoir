@@ -71,8 +71,8 @@ const images: GalleryImage[] = [
 ];
 
 export const site: SiteConfig = {
-  // TODO: replace with the live domain before launch (see LAUNCH.md).
-  siteUrl: "https://389-reservoir-rd.vercel.app",
+  // The Vercel address for now; switch to the custom domain if one is added (see LAUNCH.md).
+  siteUrl: "https://389reservoir.vercel.app",
   brand: {
     wordmark: "389 Reservoir",
     credit: { label: "A DMR Media Production", href: "https://dmrmedia.org" },

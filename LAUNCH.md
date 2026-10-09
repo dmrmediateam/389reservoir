@@ -54,8 +54,8 @@ Typeform doesn't cover.
 
 ## Domain
 
-`siteUrl` is the placeholder `https://389-reservoir-rd.vercel.app`. Set the real domain in
-`site.config.ts` once it's chosen (it's used in the lead emails, the OG tags and the sitemap).
+`siteUrl` is the live Vercel address, `https://389reservoir.vercel.app`. If a custom domain is
+added, update it in `site.config.ts` (it's used in the lead emails, the OG tags and the sitemap).
 
 ## Tracking (all still needed)
 
